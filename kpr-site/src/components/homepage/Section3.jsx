@@ -22,7 +22,7 @@ export default function Section3() {
           trigger: sectionRef.current,
           start: 'top 30%',
           end:   'top -30%',
-          scrub: true,
+          scrub: 1.5,
         },
       }).fromTo(
         '.s3-image',
@@ -50,7 +50,7 @@ export default function Section3() {
           trigger: '.s3-data-grid',
           start:   'top 80%',
           end:     'top 40%',
-          scrub: true,
+          scrub: 1.5,
         },
       })
 
@@ -60,7 +60,7 @@ export default function Section3() {
           trigger: document.querySelector('.section-four'),
           start: 'top 20%',
           end:   'center center',
-          scrub: true,
+          scrub: 1.5,
         },
       }).to('.s3-image', {
         scale:   0,

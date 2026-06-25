@@ -33,7 +33,7 @@ export default function AboutSection() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 60%',
-          scrub: true,
+          scrub: 1.5,
         },
       })
 
@@ -44,7 +44,7 @@ export default function AboutSection() {
             trigger: sectionRef.current,
             start: '70%',
             end: 'bottom 20%',
-            scrub: true,
+            scrub: 1.5,
           },
         })
           .to('.about-left-content', { opacity: 0, y: -30 })

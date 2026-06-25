@@ -45,7 +45,7 @@ export default function HomePage() {
           trigger: '.hero-section',
           start: 'top top',
           end:   'bottom top',
-          scrub: true,
+          scrub: 1.5,
         },
       })
 
@@ -66,7 +66,7 @@ export default function HomePage() {
           trigger: '.hero-section',
           start: 'top top',
           end:   'bottom center',
-          scrub: true,
+          scrub: 1.5,
         },
       })
 
