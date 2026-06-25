@@ -13,8 +13,7 @@ export default function App() {
   useEffect(() => {
     // ── 1. Initialize Lenis smooth scroll ──────────────────────
     const lenis = new Lenis({
-      smoothing: 0,
-      lerp: 0.1,
+      lerp: 0.08, // Adjust for smoothness
     })
 
     // ── 2. Keep GSAP ScrollTrigger in sync with Lenis ──────────
@@ -22,10 +21,11 @@ export default function App() {
 
     // ── 3. Add Lenis RAF to GSAP ticker ───────────────────────
     // time is in seconds (GSAP) → lenis.raf expects milliseconds
-    // multiplying by 800 instead of 1000 adds a subtle organic ease
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 800)
-    })
+    const updateLenis = (time) => {
+      lenis.raf(time * 1000)
+    }
+    
+    gsap.ticker.add(updateLenis)
 
     // Disable GSAP's built-in lag smoothing so Lenis stays in control
     gsap.ticker.lagSmoothing(0)
@@ -33,7 +33,7 @@ export default function App() {
     // ── 4. Cleanup on unmount ──────────────────────────────────
     return () => {
       lenis.destroy()
-      gsap.ticker.remove(lenis.raf)
+      gsap.ticker.remove(updateLenis)
     }
   }, [])
 
