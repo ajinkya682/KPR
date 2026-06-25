@@ -14,7 +14,7 @@ export default function Section5() {
         y: 50,
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: '.section-five',
+          trigger: sectionRef.current,
           start: 'top 50%',
           end:   'top 20%',
           scrub: 1,
@@ -27,7 +27,7 @@ export default function Section5() {
         scale: 0.8,
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: '.section-five',
+          trigger: sectionRef.current,
           start: 'top 50%',
           end:   'top 15%',
           scrub: 1,

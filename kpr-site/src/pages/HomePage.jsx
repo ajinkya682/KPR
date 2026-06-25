@@ -37,11 +37,9 @@ export default function HomePage() {
       // ── 1. Scale + translate the ENTIRE background container ──────────
       // Creates the "camera zooms into the sigil" effect as hero scrolls away
       gsap.to(backgroundContainerRef.current, {
-        keyframes: {
-          scale: [isMobile ? 5 : 10],
-          x: isMobile ? '0%'  : '14%',
-          y: isMobile ? '2%'  : '22%',
-        },
+        scale: isMobile ? 5 : 10,
+        x: isMobile ? '0%' : '14%',
+        y: isMobile ? '2%' : '22%',
         ease: 'power2.out',
         scrollTrigger: {
           trigger: '.hero-section',
@@ -55,10 +53,8 @@ export default function HomePage() {
       // As the zoom progresses, switches from cover (fills screen) to
       // contain (shows full sigil graphic) at ~80% progress
       gsap.to(imageRef.current, {
-        scale:     1.2,
-        width:     '36rem',
-        height:    '36rem',
-        ease:      'power2.out',
+        scale: 1.2,
+        ease: 'power2.out',
         onUpdate: function () {
           const progress = this.progress()
           if (imageRef.current) {

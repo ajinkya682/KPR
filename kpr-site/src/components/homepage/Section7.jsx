@@ -9,7 +9,7 @@ export default function Section7() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const st = {
-        trigger: '.section-seven',
+        trigger: sectionRef.current,
         start:   'top 55%',
         end:     'top 5%',
         scrub:   true,

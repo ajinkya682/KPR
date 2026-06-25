@@ -42,7 +42,7 @@ export default function Section6() {
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: '.section-six',
+          trigger: sectionRef.current,
           start:      'top top',
           end:        `+=${totalHeight}`,
           scrub:      true,

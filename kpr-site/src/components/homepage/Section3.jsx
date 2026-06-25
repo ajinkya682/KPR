@@ -19,7 +19,7 @@ export default function Section3() {
       // ── Main s3-image: scale from 0 → 1.1 as section scrolls up ───
       gsap.timeline({
         scrollTrigger: {
-          trigger: '.section-three',
+          trigger: sectionRef.current,
           start: 'top 30%',
           end:   'top -30%',
           scrub: true,
@@ -57,7 +57,7 @@ export default function Section3() {
       // ── Handoff: scale image back to 0 when Section4 enters ───────
       gsap.timeline({
         scrollTrigger: {
-          trigger: '.section-four',
+          trigger: document.querySelector('.section-four'),
           start: 'top 20%',
           end:   'center center',
           scrub: true,

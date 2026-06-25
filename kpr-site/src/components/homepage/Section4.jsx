@@ -12,7 +12,7 @@ export default function Section4() {
       const startY   = isMobile ? -180 : 0
 
       const circleTrigger = {
-        trigger: '.section-four',
+        trigger: sectionRef.current,
         start:   'top 25%',
         end:     'center center',
         scrub:   1,
@@ -57,7 +57,7 @@ export default function Section4() {
         opacity: 0,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: '.section-four',
+          trigger: sectionRef.current,
           start: 'top 30%',
         },
       })
